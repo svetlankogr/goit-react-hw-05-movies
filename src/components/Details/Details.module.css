@@ -1,0 +1,17 @@
+.details {
+  display: flex;
+  gap: 70px;
+  padding: 30px;
+
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.img {
+  max-width: 200px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

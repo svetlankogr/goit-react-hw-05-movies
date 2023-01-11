@@ -1,0 +1,17 @@
+.app {
+  padding: 100px;
+  padding-bottom: 24px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(119, 171, 114, 0.156);
+  z-index: 1200;
+}
