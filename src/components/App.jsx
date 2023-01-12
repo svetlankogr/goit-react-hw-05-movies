@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { React, lazy } from 'react';
 import { NavigationBar } from './NavigationBar/NavigationBar';
 import css from './App.module.css';
+
 const TrendingMovie = lazy(() => import('pages/TrendingMovie/TrendingMovie'));
 const Movies = lazy(() => import('pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
@@ -19,7 +20,16 @@ export const App = () => {
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>
-          <Route path="*" element={<h2>NotFound</h2>} />
+          <Route
+            path="*"
+            element={
+              <img
+                className={css.notFound}
+                src="https://www.impactplus.com/hubfs/404-error-page-examples-best.jpg"
+                alt="not found"
+              />
+            }
+          />
         </Route>
       </Routes>
     </div>

@@ -1,8 +1,16 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
+import {
+  useParams,
+  NavLink,
+  Link,
+  useLocation,
+  Outlet,
+} from 'react-router-dom';
 import { getMovieById } from 'services/api';
 import { Details } from 'components/Details/Details';
 import { Loader } from 'components/Loader/Loader';
+import css from './MovieDetails.module.css';
+import cn from 'classnames';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -38,7 +46,9 @@ const MovieDetails = () => {
   const vote = vote_average.toFixed(2);
   return (
     <>
-      <Link to={location.state?.from ?? '/'}>Go back</Link>
+      <Link className={css.back} to={location.state?.from ?? '/'}>
+        Go back
+      </Link>
       <Details
         originalTitle={original_title}
         originalName={original_name}
@@ -48,13 +58,28 @@ const MovieDetails = () => {
         posterPath={poster_path}
         genres={genres}
       />
-      <div>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Review</Link>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
+      <h3 className={css.additionalInfo}>Additional information</h3>
+      <div className={css.links}>
+        <NavLink
+          className={({ isActive }) =>
+            cn(css.NavLink, { [css.active]: isActive })
+          }
+          to="cast"
+        >
+          Cast
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            cn(css.NavLink, { [css.active]: isActive })
+          }
+          to="reviews"
+        >
+          Review
+        </NavLink>
       </div>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

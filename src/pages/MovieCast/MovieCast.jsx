@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'services/api';
 import { MovieCastList } from 'components/Cast/Cast';
+import css from '../../components/App.module.css';
 
 const MovieCast = () => {
   const [movieCast, setMovieCast] = useState(null);
@@ -21,7 +22,7 @@ const MovieCast = () => {
   return (
     <>
       {movieCast.length === 0 ? (
-        <p>We don't have information about cast!</p>
+        <p className={css.info}>We don't have information about cast!</p>
       ) : (
         <MovieCastList movieCast={movieCast} />
       )}

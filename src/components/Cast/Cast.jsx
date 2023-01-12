@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import css from './Cast.module.css';
+
 export const MovieCastList = ({ movieCast }) => {
   return (
     <ul className={css.cast__list}>
@@ -19,4 +21,8 @@ export const MovieCastList = ({ movieCast }) => {
       ))}
     </ul>
   );
+};
+
+MovieCastList.propTypes = {
+  movieCast: PropTypes.arrayOf(PropTypes.object),
 };

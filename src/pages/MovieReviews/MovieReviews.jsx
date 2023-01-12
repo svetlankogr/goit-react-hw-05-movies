@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MovieReviewsList } from 'components/Reviews/Reviews';
 import { getMovieReviews } from 'services/api';
+import css from '../../components/App.module.css';
 
 const MovieReviews = () => {
   const { idMovie } = useParams();
@@ -20,7 +21,7 @@ const MovieReviews = () => {
   return (
     <>
       {movieReviews.length === 0 ? (
-        <p>We don't have any reviews!</p>
+        <p className={css.info}>We don't have any reviews!</p>
       ) : (
         <MovieReviewsList reviews={movieReviews} />
       )}

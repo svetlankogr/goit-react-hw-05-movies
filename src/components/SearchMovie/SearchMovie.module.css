@@ -1,4 +1,6 @@
 .searchForm {
+  margin-top: 10px;
+  padding: 20px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -10,8 +12,8 @@
 
 .searchFormBtn {
   display: inline-block;
-  width: 48px;
-  height: 48px;
+  width: 30px;
+  height: 30px;
   border: 0;
   background-image: url('https://as1.ftcdn.net/v2/jpg/03/03/87/68/1000_F_303876825_8HnFNgtvlo0mET2RBJMxNPcM7sJXTwMR.jpg');
   background-size: 40%;

@@ -1,0 +1,11 @@
+.review__list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.review__title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
